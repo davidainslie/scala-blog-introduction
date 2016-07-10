@@ -2,7 +2,7 @@
 
 [**Scala**](http://www.scala-lang.org/) just might be your best programming investment.
 
-The world of programming languages has long been dominated by the likes of Java, C++ and C. New languages seem to pop up every other week but never get anywhere. Languages that have made it to the top got there because of being in the right place at the right time. This timing is very difficult or lucky - some languages have acquired a position that it seems we are stuck with them, even though we would like something better.
+The world of programming languages has long been dominated by the likes of C, C++ and Java. New languages seem to pop up every other week but never get anywhere. Languages that have made it to the top got there because of being in the right place at the right time. This timing is very difficult or lucky - some languages have acquired a position that it seems we are stuck with them, even though we would like something better.
 
 We seem to be in a bit of a conundrum. (Programming) Languages should be seen as milestones. They provide us (programmers) with something useful, and then we would like to move onto something better – everything should go forward.
 However, we write millions of lines of code. Spend hours and hours getting systems into production, which of course requires a lot of money.
@@ -12,7 +12,7 @@ We would like the next big technology (programming language) to be able to build
 Most (new) programming languages, like to just butt in – try to make a market and forget everything that is going on and what is already in place. This has proved to be a bad approach. People, companies, governments, are not just going to drop everything and put all their faith into something completely new, unknown, and often unproven.
 
 Scala took a while to get going, but now it is being rapidly adopted.
-The Home Office, and indeed many other Government departments, are using Scala now, and more and more projects are choosing to go with Scala. Even banks, and especially investment banks that have millions and millions invested in technologies (mainly Java, C++ and C) have got onto the Scala bandwagon - this is very significant, because they will only adopt technology that they see as the future.
+The UK Home Office, and indeed many other Government departments, are using Scala now, and more and more projects are choosing to go with Scala. Even banks, and especially investment banks that have millions and millions invested in technologies (mainly C, C++ and Java) have got onto the Scala bandwagon - this is very significant, because they will only adopt technology that they see as the future.
 
 Scala is the language that seems to do everything. You can start as small as you like, from just a shell script, yes a shell script in Scala, up to a full stack web application, all the way up to a distributed big data cruncher.
 
@@ -20,14 +20,13 @@ And yet Scala manages to allow you to not throw away history and your resources 
 
 Could Scala break the hold of the top languages and how did it become a viable challenger?
 
-What is Scala? The benefits? How are we using it at the UK Home Office?
+What is Scala? The benefits? How are we using it at the [UK Home Office (another blog)](https://davidainslie.github.io/scala-blog-uk-home-office)?
 
 Topics covered in this blog:
 - Scala Introduction
 - Scala Small to Big
 - Scala 101
 - Scala Example
-- Scala At The Home Office
 - Scala Resources
 
 ## Scala Introduction
@@ -58,8 +57,8 @@ We don’t want to write; have problems; throw away; and then start again.
 A few benefits of the Scala language (with some covered in more detail later):
 - Applications grow seamlessly with user/business demands.
 - The language works with you (not against you). Any number of classes in the same file; sound defaults such as everything immutable; code written for you etc.
-- Easily scale up and scale out.
-- Typesafe language (statically typed) with the benefits of dynamic languages, such as type inference and even dynamic programming that should be used with caution, because you may as well be writing Ruby.
+- Easily scale up (on a single machine) and scale out (to many machines).
+- Type safe language (statically typed) with the benefits of dynamic languages, such as type inference and even dynamic programming that should be used with caution, because you may as well be writing Ruby.
 - Embraces and makes it easy to program with the best methodologies such as Test Driven Development (TDD); Expression Oriented Programming; Functional Programming; Object Oriented Programming; Reactive Programming (including Asynchronous and Event Driven Development); Aspect Oriented Programming; and much more.
 - Internal and external DSLs.
 - Thread safety (concurrency) while using all resources efficiently.
@@ -100,16 +99,9 @@ Often your application will end up being distributed - it may be split up and co
 ## Scala 101
 I can only give you a taster of Scala, and just pick a few random topics.
 
-Firstly, we need Scala installed. By the way, you'll need Java installed first (see footnote). I'm assuming you are working on a Mac and have Homebrew installed. If you don't have Homebrew, then please [install Homebrew](http://brew.sh/). If you don't have a Mac... then buy one. At a command prompt, do the following:
-```
-$ brew install scala
-$ brew install sbt
-$ brew install typesafe-activator
-```
+The best way to follow along, is to have Scala installed, which I discuss in the Footnote at the end of this blog.
 
-From these the above commands: Scala is... well, you can guess. SBT, as mentioned, is Scala's interactive build tool. As for Activator, we will get to that.
-
-Now check that all is working. At a command prompt:
+Check that all is working i.e. you indeed have Scala. At a command prompt:
 ```
 $ scala
 ```
@@ -284,17 +276,7 @@ class ExampleSpec(implicit ev: ExecutionEnv) extends Specification {
 }
 ```
 
-Mmm... Interesting!
-
-In the Scala world, we usually use either [Specs2](https://etorreborre.github.io/specs2/) or [ScalaTest](http://www.scalatest.org/) libraries to help us do TDD. (Most languages have something similar). Here we are using Specs2, which adopts a very functional style to testing, and also leans towards doing BDD and not just TDD, where BDD stands for Behaviour Driven Development. The advantage BDD has over TDD, is that you write a test with behaviour of a system, as the priority, and as a result, the difference between unit and integration tests merge into each other. The above test is a prime example. It is essentially an integration test, but written as a unit test.
-
-I may write another blog on TDD/BDD in Scala, but let's just get some jargon out of the way.
-
-These methodologies emphasis writing tests before code. Why? Er, Google for the time being.
-
-Regarding TDD, you write a test using e.g. JUnit in Java. The test is often low level and not very readable - **NOT** good for future proofing your code.
-
-BDD in simplest terms is written as examples instead of tests, and the examples are grouped in specifications. The idea is to keep things at a slightly higher level than TDD and to write examples (i.e. tests) very much inline with business specifications, specifically behaviour.
+In the Scala world, we usually use either [Specs2](https://etorreborre.github.io/specs2/) or [ScalaTest](http://www.scalatest.org/) libraries to help us do TDD. (Most languages have something similar). Here we are using Specs2, which adopts a very functional style to testing, and also leans towards doing BDD and not just TDD, where BDD stands for Behaviour Driven Development. We'll save a discussion of BDD and TDD related to Scala for another blog. However, in short, both methodologies emphasis writing test code before source code.
 
 The above test states **Futures composition should run processes in parallel and combine the results** i.e. tells us what the test is doing. As the Scala Example that follows later, is a demonstration about being reactive, now seems like a good time to introduce its basic concept that utilises a Scala Future - work that will eventually be done.
 
@@ -309,8 +291,6 @@ I'm working on producing a 4
 ### **... And there are so many more useful methodologies to work with**
 Scala provides so much more, but the above three methodologies show that by working together, we can attain high quality, more readable code, which is easier to test.
 Often developers don't practice TDD because testing is cumbersome. A language such as Scala allows for easier testing.
-
-If you've not heard of the term **polyglot** in I.T., it basically refers to seamlessly using differing technologies/ideas together. Usually, there is not "one thing" that should be shoe horned in everywhere e.g. using OOP when FP (functional programming) is far more suitable, and vice-versa. But because Scala itself, is implicitly polyglot, your polyglot development will be consistent.
 
 # Scala Example
 Scala has been created, from the very beginning, to be in tune with the modern world of programming - all centred around the idea of a scalable language i.e. the language that grows with you and your needs.
@@ -480,137 +460,6 @@ val bestQuote = bestBuy(csQuote, jpQuote)
 
 What we have achieved with the **for comprehension** is to once again, not concern ourselves with time. We are reactive. Our two RESTful calls are performed non-blocking and in parallel, and only when both Futures complete does the **yield** expression provide a result - if one or both RESTful calls fail, then the **yield** will not be executed, and the completed Future given to **bestQuote** will contain the error.
 
-## Scala at The Home Office
-Scala is already used on many projects in the Home Office, and we continue creating [open source libraries](https://github.com/UKHomeOffice) - we'll cover quite a few from the Home Office Registered Traveller Programme (RTP - where libraries are named rtp-library-name).
-
-Scala is also used within many over UK government departments.
-
-Within the Home Office we use: SBT; Play; Akka; Spray (merged into Akka-HTTP); Specs2 and Scalatest; Casbah, Salat, Reactivemongo to interact with Mongodb.
-
-The **Registered Traveller Caseworker** system accepts applications from a customer facing system for fast tracking through UK borders. Applications (Cases) are held in Mongodb and go through a workflow process, managed with a Play frontend.
-
-The **Registered to Apply for Global Entry** system is similar, but for fast tracking UK citizens through USA borders. This shows a good example of using Akka Clustering - very powerful and yet easy. We have load-balanced boxes that talk to the USA system via SOAP services. Our system constantly asks the USA system questions about customers either registering or already registered. Because each box does the same thing, we don't want the same question asked from both boxes, as we may get race conditions. By using an Akka Singleton Cluster, actors attempt to start up on all boxes e.g. actor of type A wants to start up on Nodes 1, 2 and 3. However, only one box will have actor A running. The **actor systems** on the boxes, constantly communicate - if actor A goes down on Node 1, or if Node 1 itself goes down, Akka will start up the same actor on one of the available boxes. If we had a Play application for monitoring these boxes, it would be easy, as it would simply join the Akka Cluster.
-
-The following is just a few of our Home Office Registered Traveller open source Scala libraries.
-
-### **IO functionality (rtp-io-lib)**
-[rtp-io-lib](https://github.com/UKHomeOffice/rtp-io-lib) is a general purpose library focused around IO. Many of our projects in the Home Office use JSON to communicate with other systems. Even though JSON is schemaless, a [JSON Schema](http://json-schema.org/) can be used, as we do. We use JSON schemas as contracts between systems, and they are used to validate JSON so adding minimal security. By using this approach it is easier to develop and test systems in isolation, knowing that upon integration testing, things should just work! 
-
-E.g. to validate JSON against a schema:
-```scala
-val jsonSchema = JsonSchema(<your schema from a JSON file>)
-val json = JValue(<your JSON>)
-
-jsonSchema validate json map processJson badMap processError
-```
-Interesting line (**jsonSchema validate json map...**), especially if you don't know Scala and/or functional programming.
-
-Because Scala can easily produces DSLs (Domain Specific Languages) both internal and external, we can write and read our code somewhat fairly close to English. So how do we understand that line?
-
-Well **map** (as mentioned) is "something" that given input, in this case the result of **jsonSchema validate json**, will produce output. It produces output by applying a function, in this case **processJson** to the given input.
-
-And **badMap** does just the same as **map**, but as the name suggests, its input is something dodgy!
-
-Well **jsonSchema validate json**, validates the **json** against the **jsonSchema**. Now either validation passes or fails. If it passes, that *good* JSON will be given to **map** to apply its function **processJson**. If the validation fails, the *bad* errors will be given to **badMap** to apply its function **processError**. What this one "DSL" line means, is that functionality is split into reusable, testable, easier to manage and reason about functions.
-
-This library provides so much more:
-- Transform JSON e.g. renaming properties; altering values including changing their types; restructuring the JSON.
-- DSL for condition logic.
-- Configuration "add-ons" for the powerful [Scala configuration library](https://github.com/typesafehub/config).
-- Easily read resources into something you need, and easily add to this functionality.
-
-### **Akka functionality (rtp-akka-lib)**
-[rtp-akka-lib](https://github.com/UKHomeOffice/rtp-akka-lib) provides some extras for working with Akka and Spray (though Spray is being merged into Akka). [Akka](http://akka.io/) is too big to describe what it really is, but it's all about distributed, concurrent, fault-tolerant, resilient, but amazingly easy to test systems. [Spray](http://spray.io/) is also big, but centres around easily creating RESTful services. At the Home Office we use Spray for microservices.
-
-This library provides:
-- Easy composition of routings i.e. RESTful endpoints.
-- Extra marshalling for converting external requests/responses to/from domain code.
-- Scheduling.
-- Clustering, specifically singleton clustering i.e. some functionality only runs on one box.
-
-### **Interacting with Mongodb the NoSQL database (rtp-mongo-lib)**
-[rtp-mongo-lib](https://github.com/UKHomeOffice/rtp-mongo-lib) to seamlessly work with Mongo drivers - currently Casbah (with or without Salat) and ReactiveMongo.
-
-Casbah is a Scala library that wraps the official Java driver for Mongodb (a library to interact with Mongodb). Salat sits on top of Casbah to provide, well, think of it as the equivalent of an ORM tool i.e. Object to Relational Mapping. Of course Mongodb is not a Relational database, but the idea is the same - the tool abstracts the underlying data structure of the database to a programmer's Object world. Note that Casbah synchronously interacts with the database. Mmmm! Not reactive. However, there is a newer asynchronous driver that has come out to maybe replace Casbah.
-
-As for Reactivemongo. It is an asynchronous Mongodb driver.
-
-This library provides:
-- Easily create a Repository (representation of a Mongodb Collection, much like a Relational Table), injecting the "configuration" such as location and credentials of your database.
-- Embed a Mongodb server with a specification so that each test can interact with Mongo but still be completely independent i.e. no test interference.
-
-### **Publish/Subscribe to RabbitMQ messaging system (rtp-rabbit-lib)**
-[rtp-rabbit-lib](https://github.com/UKHomeOffice/rtp-rabbit-lib) allows for easy interaction with [RabbitMQ](https://www.rabbitmq.com/), the messaging system written in [Erlang](https://www.erlang.org/). Originally, our RTP frontend and backend systems, were separated by RabbitMQ - frontend public facing systems would publish applications to RabbitMQ queues from which backend systems would subscribe. Note that we decided that the library should only work with JSON (functionality could be added for other data formats).
-
-This library provides:
-- Automatic subscription, where business functionality only has to implement a method that accepts JSON that was published onto a queue.
-- Publication and subscription of JSON is automatically validated against a provided JSON schema.
-- Messages are only removed from queues, when your business logic is done and happy.
-- Error messages can be published to error queues - we coded an Error Policy.
-- There is a default Retry Strategy, which can be extended.
-- Easy testing. Even though a running instance of RabbitMQ is required (we do not have an embedded version as RabbitMQ is written in Erlang) every test creates its own unique, temporary queues - creation and teardown is done for you.
-
-An example of writing a test is (don't worry about the details, just note that we are running a full blown integration test as if it were a simple, concise unit test):
-```scala
-"Consumer" should {
-  "consume valid JSON message (for a simple test we do not have a JSON schema to validate against)" in {
-    // Result will be set at some point but don't know when as publish/subscribe is asynchronous.
-    val result = Promise[JValue]()
-
-    // Create a Publisher that is also a Consumer where WithRabbit will connect to a RabbitMQ instance and create/teardown queues.
-    val rabbit = new Publisher with NoJsonValidator with WithQueue.Consumer with WithRabbit {
-      // This method is run, when JSON is consumed from a queue (JSON is automatically validated).
-      def json(json: JValue) = result success json
-    }
-
-    // Publish JSON to RabbitMQ
-    rabbit.publish("json" -> "ok")
-
-    // At some point in the future, the published JSON will be consumed and here we assert that result.
-    result.future must beLike[JValue] {
-      case j => j \ "json" mustEqual JString("ok")
-    }.await
-  }
-}
-```
-
-### **Publish/Subscribe to Amazon SQS messaging system (rtp-amazon-sqs-lib)**
-[rtp-amazon-sqs-lib](https://github.com/UKHomeOffice/rtp-amazon-sqs-lib) allows for easy integration with Amazon's SQS messaging system, with the help of [ElasticMQ](https://github.com/adamw/elasticmq), an implementation of Amazon SQS. RTP now uses Amazon SQS in favour of RabbitMQ, having moved to AWS. The idea of this library, is much the same as the one discussed above (for RabbitMQ), except that it is a tad more generic, and testing is even easier with an actual embedded Amazon SQS, thanks to ElasticMQ and some custom wrappers.
-
-This library provides:
-- Automatic subscription of any kind of messages.
-- Processing of messages is done via your custom messaging protocol built on top of Akka (unlike the RabbitMQ library we have, where you implement a contract based on JSON).
-- Publication and subscription of JSON can be easily validated against a JSON schema.
-- Messages can be filtered by chaining filter functions. A message can be altered, replaced, or even ignored.
-- Message listeners can be registered.
-- Messages are only removed from queues, when your business logic is done and happy.
-- Error messages can be published to error queues.
-- Easy testing. Everything is embedded and tests do not interfere with other.
-- Integration tests are written as easily as unit tests and mocking is rarely required, making your tests more viable and code design better.
-
-An example of writing a test is (don't worry about the details, just note that we are running a full blown integration test as if it were a simple, concise unit test), where a message is published to Amazon SQS queue and subscription processes the message:
-```scala
-"Subscribing to a text message" should {
-  "fire a message of "Processed", once processing is complete" in new Context {
-    system actorOf Props {
-      new SubscriberActor(new Subscriber(queue)) {
-        def receive: Receive = {
-          case m: Message => sender() ! Processed(m)
-        }
-      }
-    }
-
-    val message = "blah"
-
-    new Publisher(queue) publish message
-
-    eventuallyExpectMsg[Processed] {
-      case Processed(m) => m.content == message
-    }
-  }
-}
-```
-
 # Scala Resources
 [Scala](http://www.scala-lang.org/) is not only a language that grows with user/developer/team needs, it is evolving at a rapid rate. In fact, the Scala compiler is being rewritten. The current compiler is one of the most powerful compilers, as it does a lot for a developer - it really does help/assist the developer (and as a result, some people complain about the speed of the compiler). The new compiler named [DOTTY](http://dotty.epfl.ch/) takes compilers to a whole new level.
 
@@ -623,10 +472,37 @@ Free Scala courses can be found at the [Scala Centre](https://scala.epfl.ch/)
 [Coursera](https://www.coursera.org/), which has hundreds of brilliant free and paid courses, has [5 Scala courses](https://www.coursera.org/courses?languages=en&query=scala) with video lectures, assignments and certificates. The first one, [Functional Programming Principles in Scala](https://www.coursera.org/learn/progfun1), is a must for any Scala developer.
 
 # Footnote
+
+Scala runs on the JVM. You need Java installed, and then install Scala.
+
+The following notes are for Mac users. Regarding other platforms, please see the links provided.
+
+### Installing Homebrew for Mac
+The following installations use [Homebrew](http://brew.sh/). Paste the the following at a command/terminal prompt:
+```
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
 ### Installing Java on your computer
+
 To install Java, either go to the [Java website](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or, if you are lucky to have a Mac with Homebrew installed, then the following (from a command console) will install the latest [Open JDK](http://openjdk.java.net/):
 ```
 $ brew update
 $ brew tap caskroom/cask
 $ brew install brew-cask
 $ brew cask install java
+
+### Installing Scala on your computer
+
+To install Scala, either go to the [Scala website](http://www.scala-lang.org/download/) or, if you are lucky to have a Mac with Homebrew installed, then the following (from a command console) will install the latest version of Scala:
+```
+$ brew install scala
+$ brew install sbt
+$ brew install typesafe-activator
+```
+
+From these the above commands: Scala is... well, you can guess.
+
+SBT is Scala's interactive build tool.
+
+Activator is briefly discussed in the blog.
