@@ -19,7 +19,11 @@
     </section>
 
     <section class="main-content">
-      <p><a href="http://www.scala-lang.org/"><strong>Scala</strong></a> just might be your best programming investment.</p>
+      <h1>
+<a id="scala-took-a-while-to-get-going-if-you-havent-its-time-to-get-going-with-scala" class="anchor" href="#scala-took-a-while-to-get-going-if-you-havent-its-time-to-get-going-with-scala" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scala took a while to get going. <em>If you haven't, it's time to get going with Scala.</em>
+</h1>
+
+<p><a href="http://www.scala-lang.org/"><strong>Scala</strong></a> just might be your best programming investment.</p>
 
 <p>The world of programming languages has long been dominated by the likes of C, C++ and Java. New languages seem to pop up every other week but never get anywhere. Languages that have made it to the top got there because of being in the right place at the right time. This timing is very difficult or lucky - some languages have acquired a position that it seems we are stuck with them, even though we would like something better.</p>
 
@@ -247,7 +251,8 @@ here<span class="pl-k">:</span> <span class="pl-k">String</span> <span class="pl
 
 <p>Using the "functional" methodology in Scala is very important. In the simplest of terms, we deal with functions, where a function takes input, processes it, and produces output. Remember one of the original computing terms: "Garbage in, garbage out"? That is a function.</p>
 
-<pre><code>input =&gt; function (which works on the input) =&gt; output (the result)
+<pre><code>     function
+input   =&gt;   output (the result)
 </code></pre>
 
 <p>Why are functions to important?</p>
@@ -256,7 +261,8 @@ here<span class="pl-k">:</span> <span class="pl-k">String</span> <span class="pl
 
 <p>We write a test for a function; write the function; and we prove that the function works by asserting (checking) the result i.e. the output from the function. Upon creating more and more functions, we can compose those functions i.e. make them work together e.g. input A goes into function 1 resulting in output B, which is then used as the input to function 2, resulting in output C.</p>
 
-<div class="highlight highlight-source-scala"><pre><span class="pl-en">A</span> <span class="pl-k">=&gt;</span> f1 <span class="pl-k">=&gt;</span> <span class="pl-en">B</span> <span class="pl-k">=&gt;</span> f2 <span class="pl-k">=&gt;</span> <span class="pl-en">C</span></pre></div>
+<div class="highlight highlight-source-scala"><pre>  f1   f2
+<span class="pl-en">A</span> <span class="pl-k">=&gt;</span> <span class="pl-en">B</span> <span class="pl-k">=&gt;</span> <span class="pl-en">C</span></pre></div>
 
 <p>That is composition, and because f1 and f2 have been tested separately, then we know this composition will work... always. With one caveat.
 f1 and f2 must only work on their given input and not anything outside e.g. there may be some other data (apart from A and B) named Z, that is hanging around somewhere. If our functions use Z, it could influence the result, and instead of ending up with a C, we end up with a S and another time we may end up with T.</p>
