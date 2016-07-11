@@ -195,7 +195,8 @@ Because expression oriented programming results in something generated from exec
 Using the "functional" methodology in Scala is very important. In the simplest of terms, we deal with functions, where a function takes input, processes it, and produces output. Remember one of the original computing terms: "Garbage in, garbage out"? That is a function.
 
 ```
-input => function (which works on the input) => output (the result)
+     function
+input   =>   output (the result)
 ```
 
 Why are functions to important?
@@ -205,7 +206,8 @@ Well, there is testing, which will lead us into TDD (Test Driven Development).
 We write a test for a function; write the function; and we prove that the function works by asserting (checking) the result i.e. the output from the function. Upon creating more and more functions, we can compose those functions i.e. make them work together e.g. input A goes into function 1 resulting in output B, which is then used as the input to function 2, resulting in output C.
 
 ```scala
-A => f1 => B => f2 => C
+  f1   f2
+A => B => C
 ```
 
 That is composition, and because f1 and f2 have been tested separately, then we know this composition will work... always. With one caveat.
