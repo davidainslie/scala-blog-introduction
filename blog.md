@@ -1,5 +1,3 @@
-# Scala took a while to get going. *If you haven't, it's time to get going with Scala.*
-
 [**Scala**](http://www.scala-lang.org/) just might be your best programming investment.
 
 The world of programming languages has long been dominated by the likes of C, C++ and Java. New languages seem to pop up every other week but never get anywhere. Languages that have made it to the top got there because of being in the right place at the right time. This timing is very difficult or lucky - some languages have acquired a position that it seems we are stuck with them, even though we would like something better.
