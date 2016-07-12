@@ -1,4 +1,4 @@
-name := "scala-blog"
+name := "scala-blog-introduction"
 
 version := "1.0.0"
 
