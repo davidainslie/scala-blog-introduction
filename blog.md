@@ -24,7 +24,6 @@ Topics covered in this blog:
 - Scala Introduction
 - Scala Small to Big
 - Scala 101
-- Scala Example
 - Scala Resources
 
 ## Scala Introduction
