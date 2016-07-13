@@ -23,11 +23,11 @@ Note that the file in question ends with **.sc** which is essentially stating th
 As pointed out in the introduction blog, Scala grows with the needs of developers/systems, and Scala can start as small as a shell script e.g. replacing your bash scripts with Scala.
 
 From the command prompt (within the root of this project) you can do the following:
-```
+```scala
 $ scala
 
 scala> :load src/test/scala/introduction-worksheet.sc
-WHERE YOU WILL SEE THE OUTPUT
+// WHERE YOU WILL SEE THE OUTPUT
 x: Int = 2
 res0: Int = 3
 res1: scala.collection.immutable.IndexedSeq[Int] = Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20)
